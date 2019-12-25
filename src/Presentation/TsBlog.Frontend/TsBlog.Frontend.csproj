@@ -162,6 +162,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -179,6 +180,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\TsBlog.Domain\TsBlog.Domain.csproj">
+      <Project>{9E5C7176-8112-416E-8624-0EC8B86670E6}</Project>
+      <Name>TsBlog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\TsBlog.Repositories\TsBlog.Repositories.csproj">
+      <Project>{3193939c-5136-432e-aa06-cc609c18bdc9}</Project>
+      <Name>TsBlog.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
