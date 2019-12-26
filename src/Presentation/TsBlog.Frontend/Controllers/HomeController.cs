@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TsBlog.Repositories;
+using TsBlog.Services;
 
 namespace TsBlog.Frontend.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPostService _postService;
+
+        public HomeController(IPostService postService)
+        {
+            _postService = postService;
+        }
         public ActionResult Index()
         {
             return View();
@@ -16,8 +23,7 @@ namespace TsBlog.Frontend.Controllers
 
         public ActionResult Post()
         {
-            var postRepository = new PostRepository();
-            var post = postRepository.FindById(1);
+            var post = _postService.FindById(1);
             return View(post);
         }
     }

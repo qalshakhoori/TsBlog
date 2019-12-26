@@ -1,9 +1,12 @@
 ﻿using System;
+using SqlSugar;
 
 namespace TsBlog.Domain.Entities
 {
+    [SugarTable("tb_post")]
     public class Post
     {
+        [SugarColumn(IsIdentity = true, IsPrimaryKey = true)]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }

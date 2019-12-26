@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TsBlog.Repositories", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TsBlog.Frontend", "src\Presentation\TsBlog.Frontend\TsBlog.Frontend.csproj", "{2B0F1A1F-3321-49FA-B676-F507135CFB3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TsBlog.Services", "TsBlog.Services\TsBlog.Services.csproj", "{33D84187-0DDA-4CA8-A654-C1EC928BF694}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{2B0F1A1F-3321-49FA-B676-F507135CFB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B0F1A1F-3321-49FA-B676-F507135CFB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B0F1A1F-3321-49FA-B676-F507135CFB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D84187-0DDA-4CA8-A654-C1EC928BF694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D84187-0DDA-4CA8-A654-C1EC928BF694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D84187-0DDA-4CA8-A654-C1EC928BF694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D84187-0DDA-4CA8-A654-C1EC928BF694}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{9E5C7176-8112-416E-8624-0EC8B86670E6} = {08717D0A-FCE8-4DA2-B0B9-9DF575CC9C1A}
 		{3193939C-5136-432E-AA06-CC609C18BDC9} = {08717D0A-FCE8-4DA2-B0B9-9DF575CC9C1A}
 		{2B0F1A1F-3321-49FA-B676-F507135CFB3A} = {1A5FBB38-8939-4993-8BF7-3FFFB50A1F88}
+		{33D84187-0DDA-4CA8-A654-C1EC928BF694} = {08717D0A-FCE8-4DA2-B0B9-9DF575CC9C1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D078AC6-87F9-4246-9D86-A15C73B713FA}
