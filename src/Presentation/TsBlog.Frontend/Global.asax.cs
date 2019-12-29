@@ -5,6 +5,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using TsBlog.Repositories;
 using TsBlog.Services;
+using TsBlog.AutoMapperConfig;
+using System;
+using System.Linq;
 
 namespace TsBlog.Frontend
 {
@@ -18,6 +21,7 @@ namespace TsBlog.Frontend
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             AutofacRegister();
+            AutoMapperRegister();
         }
 
         private void AutofacRegister()
@@ -28,7 +32,18 @@ namespace TsBlog.Frontend
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             // Registered Warehouse Reservoir Service
-            builder.RegisterType<PostRepository>().As<IPostRepository>();
+            //builder.RegisterType<PostRepository>().As<IPostRepository>();
+
+            // Register entities based on interface constraints
+            var assembly = AppDomain.CurrentDomain.GetAssemblies();
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(
+                    t => t.GetInterfaces()
+                    .Any(i => i.IsAssignableFrom(typeof(IDependency)))
+                    )
+                .AsImplementedInterfaces()
+                .InstancePerDependency();
+
             // Registration Service Layer Service
             builder.RegisterType<PostService>().As<IPostService>();
 
@@ -39,6 +54,11 @@ namespace TsBlog.Frontend
 
             // Setting Dependency Injection Parser
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+        }
+
+        private void AutoMapperRegister()
+        {
+            new AutoMapperStartupTask().Execute();
         }
     }
 }

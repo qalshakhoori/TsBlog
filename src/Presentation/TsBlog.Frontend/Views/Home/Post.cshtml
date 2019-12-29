@@ -1,10 +1,12 @@
-﻿@model TsBlog.Domain.Entities.Post
+﻿@model TsBlog.ViewModel.Post.PostViewModel
 @{
     ViewBag.Title = "Post";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Post</h2>
-
-<p>Post id:@Model.Id</p>
-<p>Post Title:@Model.Title</p>
+<div>
+    <p>Post id:@Model.Id</p>
+    <p>Post Title:@Model.Title</p>
+    <p>Post PublishedAt:@Model.PublishedAt</p>
+    <p>Post IsDeleted:@Model.IsDeleted</p>
+</div>

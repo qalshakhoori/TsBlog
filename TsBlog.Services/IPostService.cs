@@ -11,6 +11,7 @@ namespace TsBlog.Services
         /// <param name="id">ID</param>
         /// <returns></returns>
         Post FindById(int id);
+
         /// <summary>
         /// Query all data (no pagination, use cautiously in large quantities)
         /// </summary>
@@ -22,7 +23,7 @@ namespace TsBlog.Services
         /// </summary>
         /// <param name="entity">blog entity class </param>
         /// <returns></returns>
-        int Insert(Post entity);
+        long Insert(Post entity);
 
         /// <summary>
         /// Updating Entity Data

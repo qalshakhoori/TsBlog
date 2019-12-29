@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3193939C-5136-432E-AA06-CC609C18BDC9}</ProjectGuid>
+    <ProjectGuid>{9FC31315-5165-4245-8919-A8004FC91871}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TsBlog.Repositories</RootNamespace>
-    <AssemblyName>TsBlog.Repositories</AssemblyName>
+    <RootNamespace>TsBlog.ViewModel</RootNamespace>
+    <AssemblyName>TsBlog.ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="SqlSugar, Version=5.0.0.12, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\sqlSugar.5.0.0.12\lib\SqlSugar.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,26 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="DataConverter.cs" />
-    <Compile Include="DbFactory.cs" />
-    <Compile Include="GenericRepository.cs" />
-    <Compile Include="IDependency.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="IPostRepository.cs" />
-    <Compile Include="MySqlHelper.cs" />
-    <Compile Include="PostRepository.cs" />
+    <Compile Include="Post\PostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TsBlog.Domain\TsBlog.Domain.csproj">
-      <Project>{9e5c7176-8112-416e-8624-0ec8b86670e6}</Project>
-      <Name>TsBlog.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

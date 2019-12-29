@@ -195,6 +195,10 @@
       <Project>{33d84187-0dda-4ca8-a654-c1ec928bf694}</Project>
       <Name>TsBlog.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\TsBlog.AutoMapperConfig\TsBlog.AutoMapperConfig.csproj">
+      <Project>{e88d1709-2a3f-4311-b789-d86e537e9d0e}</Project>
+      <Name>TsBlog.AutoMapperConfig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\TsBlog.Domain\TsBlog.Domain.csproj">
       <Project>{9E5C7176-8112-416E-8624-0EC8B86670E6}</Project>
       <Name>TsBlog.Domain</Name>
@@ -202,6 +206,10 @@
     <ProjectReference Include="..\..\Libraries\TsBlog.Repositories\TsBlog.Repositories.csproj">
       <Project>{3193939c-5136-432e-aa06-cc609c18bdc9}</Project>
       <Name>TsBlog.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\TsBlog.ViewModel\TsBlog.ViewModel.csproj">
+      <Project>{9fc31315-5165-4245-8919-a8004fc91871}</Project>
+      <Name>TsBlog.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
