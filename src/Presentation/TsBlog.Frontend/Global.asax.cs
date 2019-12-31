@@ -8,6 +8,7 @@ using TsBlog.Services;
 using TsBlog.AutoMapperConfig;
 using System;
 using System.Linq;
+using Autofac.Features.ResolveAnything;
 
 namespace TsBlog.Frontend
 {
@@ -44,12 +45,21 @@ namespace TsBlog.Frontend
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
 
+            //builder.RegisterGeneric(typeof(GenericRepository<>))
+            //    .As(typeof(IRepository<>));
+            //builder.RegisterGeneric(typeof(GenericService<>))
+            //    .As(typeof(IService<>));
+
+            //builder.RegisterGeneric(typeof(GenericRepository<>));
+            //builder.RegisterGeneric(typeof(GenericService<>));
+
+
             // Registration Service Layer Service
-            builder.RegisterType<PostService>().As<IPostService>();
+            //builder.RegisterType<PostService>().As<IPostService>();
 
             // Registration filter
             builder.RegisterFilterProvider();
-
+            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
             var container = builder.Build();
 
             // Setting Dependency Injection Parser
