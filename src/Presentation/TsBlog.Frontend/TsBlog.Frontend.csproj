@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,6 +173,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Post.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -198,6 +201,10 @@
     <ProjectReference Include="..\..\Libraries\TsBlog.AutoMapperConfig\TsBlog.AutoMapperConfig.csproj">
       <Project>{e88d1709-2a3f-4311-b789-d86e537e9d0e}</Project>
       <Name>TsBlog.AutoMapperConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tsblog.Core\Tsblog.Core.csproj">
+      <Project>{2b52ea10-ca98-4251-82ae-8208520826f7}</Project>
+      <Name>Tsblog.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\TsBlog.Domain\TsBlog.Domain.csproj">
       <Project>{9E5C7176-8112-416E-8624-0EC8B86670E6}</Project>
