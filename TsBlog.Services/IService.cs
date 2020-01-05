@@ -31,7 +31,7 @@ namespace TsBlog.Services
         /// <param name="predicate">conditional expression tree</param>
         /// <param name="orderBy">sort </param>
         /// < returns > generic entity set </returns >
-        IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy);
+        IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy = "");
 
         /// <summary>
         /// Query data according to conditions

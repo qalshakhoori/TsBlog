@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TsBlog.ViewModel.Post.PostViewModel>
+﻿@model TsBlog.ViewModel.Post.PostViewModel
 @{
     Layout = null;
 }
@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ASP.NET MVC 5 Series Articles Tutorial--Home Page | TSBLOG</title>
+    <title>@(Model.Title) | TSBLOG</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/resources/css/site.css" rel="stylesheet" />
 </head>
@@ -21,11 +21,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="~/">TSBLOG</a>
+                <a class="navbar-brand" href="~"> website name</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="~/"> homepage</a></li>
+                    <li> <a href="~/"> homepage</a></li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> classification navigation <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -50,27 +50,14 @@
                     <li> <a href="~/account/register">Free registration</a></li>
                     <li> <a class="btn btn-primary nav-btn-login" href="~/account/login">Log in immediately</a></li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
     </nav>
     <div class="container">
-        <div class="jumbotron">
-            <h1> Hello, buddy</h1>
-            <p> Welcome to Rector's ASP.NET MVC 5 series article tutorials. Here, Rector will work with you step by step to create a WEB application that integrates Repository + Autofac + Automapper + SqlSugar. </p>
-            <p> Are you ready? </p>
-            <p>......</p>
-            <p> Let's start exploring ASP. NET MVC 5 applications!!!</p>
-        </div>
-        <strong class="post-title">list of articles (@(Model.Count()) </strong>
-        <ul class="list-unstyled post-item-box">
-            @foreach (var p in Model)
-            {
-                <li>
-                    <h2><a href="~/post/details/@p.Id">@p.Title</a></h2>
-                    <p class="post-item-summary">@p.Summary... <a href="~/post/details/@p.Id"> Read the full text</a></p>
-                </li>
-            }
-        </ul>
+        <h1 class="post-title">@Model.Title</h1>
+        <article class="article-content">
+            @Html.Raw(Model.Content)
+        </article>
     </div>
     <footer class="footer-box">
         <div class="container">

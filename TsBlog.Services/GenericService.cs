@@ -40,7 +40,7 @@ namespace TsBlog.Services
         /// <param name="predicate">conditional expression tree</param>
         /// <param name="orderBy">sort </param>
         /// < returns > generic entity set </returns >
-        public IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy)
+        public IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy = "")
         {
             return _repository.FindListByClause(predicate, orderBy);
         }

@@ -45,5 +45,10 @@
         /// Browsing volume
         /// </summary>
         public int ViewCount { get; set; }
+
+        /// <summary>
+        // / abstract
+        /// </summary>
+        public string Summary { get; set; }
     }
 }

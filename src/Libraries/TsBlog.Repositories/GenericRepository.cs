@@ -43,12 +43,16 @@ namespace TsBlog.Repositories
         /// <param name="predicate">conditional expression tree</param>
         /// <param name="orderBy">sort </param>
         /// < returns > generic entity set </returns >
-        public IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy)
+        public IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy = "")
         {
             using (var db = DbFactory.GetSqlSugarClient())
             {
-                var entities = db.Queryable<T>().Where(predicate).ToList();
-                return entities;
+                var query = db.Queryable<T>().Where(predicate);
+
+                if (!string.IsNullOrEmpty(orderBy))
+                    query = query.OrderBy(orderBy);
+
+                return query.ToList();
             }
         }
 
