@@ -1,83 +1,22 @@
 ﻿@model IEnumerable<TsBlog.ViewModel.Post.PostViewModel>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ASP. NET MVC 5 series article tutorial - home page";
 }
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ASP.NET MVC 5 Series Articles Tutorial--Home Page | TSBLOG</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/resources/css/site.css" rel="stylesheet" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top ts-navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="~/">TSBLOG</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="~/"> homepage</a></li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> classification navigation <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header"> back-end development</li>
-                            <li> <a href="http://2sharings.com/category/csharp-development">C# Programming</a></li>
-                            <li> <a href="http://2sharings.com/category/dot-net">.NET Programming</a></li>
-                            <li><a href="http://2sharings.com/category/asp-dot-net">ASP.NET</a></li>
-                            <li><a href="http://2sharings.com/category/asp-net-mvc">ASP.NET MVC</a></li>
-                            <li><a href="http://2sharings.com/category/asp-dotnet-core">ASP.NET Core</a></li>
-                            <li><a href="http://2sharings.com/category/winform">Winform</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">database</li>
-                            <li><a href="http://2sharings.com/category/mysql">MySQL</a></li>
-                            <li><a href="http://2sharings.com/category/sql-server">SQL Server</a></li>
-                            <li><a href="http://2sharings.com/category/sqlite">SqLite</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="~/home/about">About us</a></li>
-                    <li> <a href="~/home/contact"> Contact us</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right navbar-profile">
-                    <li> <a href="~/account/register">Free registration</a></li>
-                    <li> <a class="btn btn-primary nav-btn-login" href="~/account/login">Log in immediately</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-    <div class="container">
-        <div class="jumbotron">
-            <h1> Hello, buddy</h1>
-            <p> Welcome to Rector's ASP.NET MVC 5 series article tutorials. Here, Rector will work with you step by step to create a WEB application that integrates Repository + Autofac + Automapper + SqlSugar. </p>
-            <p> Are you ready? </p>
-            <p>......</p>
-            <p> Let's start exploring ASP. NET MVC 5 applications!!!</p>
-        </div>
-        <strong class="post-title">list of articles (@(Model.Count()) </strong>
-        <ul class="list-unstyled post-item-box">
-            @foreach (var p in Model)
-            {
-                <li>
-                    <h2><a href="~/post/details/@p.Id">@p.Title</a></h2>
-                    <p class="post-item-summary">@p.Summary... <a href="~/post/details/@p.Id"> Read the full text</a></p>
-                </li>
-            }
-        </ul>
-    </div>
-    <footer class="footer-box">
-        <div class="container">
-            Copyright - copy; @(DateTime. Now. Year)
-        </div>
-    </footer>
-    <script></script>
-    <script></script>
-</body>
-</html>
+<div class="jumbotron">
+    <h1> Hello, buddy</h1>
+    <p> Welcome to Rector's ASP.NET MVC 5 series article tutorials. Here, Rector will work with you step by step to create a WEB application that integrates Repository + Autofac + Automapper + SqlSugar. </p>
+    <p> Are you ready? </p>
+    <p>......</p>
+    <p> Let's start exploring ASP. NET MVC 5 applications!!!</p>
+</div>
+<strong class="post-title">list of articles (@(Model.Count()) </strong>
+<ul class="list-unstyled post-item-box">
+    @foreach (var p in Model)
+    {
+        <li>
+            <h2><a href="~/post/details/@p.Id">@p.Title</a></h2>
+            <p class="post-item-summary">@p.Summary... <a href="~/post/details/@p.Id"> Read the full text</a></p>
+        </li>
+    }
+</ul>
