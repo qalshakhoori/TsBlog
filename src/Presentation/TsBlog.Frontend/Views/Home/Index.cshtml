@@ -1,7 +1,9 @@
-﻿@model IEnumerable<TsBlog.ViewModel.Post.PostViewModel>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<TsBlog.ViewModel.Post.PostViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "ASP. NET MVC 5 series article tutorial - home page";
+    ViewBag.Title = "ASP.NET MVC 5 series article tutorial - home page";
 }
 <div class="jumbotron">
     <h1> Hello, buddy</h1>
@@ -20,3 +22,15 @@
         </li>
     }
 </ul>
+@Html.PagedListPager((IPagedList)ViewBag.Pagination, page => Url.Action("index", new { page }), new PagedListRenderOptions
+{
+    LinkToFirstPageFormat = "Home Page",
+    LinkToPreviousPageFormat = "Last page",
+    LinkToNextPageFormat = "Next Page",
+    LinkToLastPageFormat = "Last Page",
+    DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+    DisplayLinkToLastPage = PagedListDisplayMode.Never,
+    DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+    MaximumPageNumbersToDisplay = 5
+})
+})

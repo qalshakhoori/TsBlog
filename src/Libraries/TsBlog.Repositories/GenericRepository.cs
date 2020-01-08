@@ -57,6 +57,25 @@ namespace TsBlog.Repositories
         }
 
         /// <summary>
+        /// Query Paging Data Based on Conditions
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="page index">current page index </param>
+        /// <param name="pageSize">distribution size </param>
+        /// <returns></returns>
+        public IPagedList<T> FindPagedList(Expression<Func<T, bool>> predicate, string orderBy = "", int pageIndex = 1, int pageSize = 20)
+        {
+            using (var db = DbFactory.GetSqlSugarClient())
+            {
+                var totalCount = 0;
+                var page = db.Queryable<T>().OrderBy(orderBy).ToPageList(pageIndex, pageSize, ref totalCount);
+                var list = new PagedList<T>(page, pageIndex, pageSize, totalCount);
+                return list;
+            }
+        }
+
+        /// <summary>
         /// Query data according to conditions
         /// </summary>
         /// <param name="predicate">conditional expression tree</param>

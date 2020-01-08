@@ -53,10 +53,12 @@
     <Compile Include="DbFactory.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IDependency.cs" />
+    <Compile Include="IPagedList.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IPostRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="MySqlHelper.cs" />
+    <Compile Include="PagedList.cs" />
     <Compile Include="PostRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepository.cs" />

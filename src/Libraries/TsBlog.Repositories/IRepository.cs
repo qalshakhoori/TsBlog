@@ -41,6 +41,16 @@ namespace TsBlog.Repositories
         T FindByClause(Expression<Func<T, bool>> predicate);
 
         /// <summary>
+        /// Query Paging Data Based on Conditions
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="page index">current page index </param>
+        /// <param name="pageSize">distribution size </param>
+        /// <returns></returns>
+        IPagedList<T> FindPagedList(Expression<Func<T, bool>> predicate, string orderBy = "", int pageIndex = 1, int pageSize = 20);
+
+        /// <summary>
         /// Write Entity Data
         /// </summary>
         /// <param name="entity">entity class </param>

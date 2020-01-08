@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using TsBlog.Repositories;
 
 namespace TsBlog.Services
 {
@@ -32,6 +33,16 @@ namespace TsBlog.Services
         /// <param name="orderBy">sort </param>
         /// < returns > generic entity set </returns >
         IEnumerable<T> FindListByClause(Expression<Func<T, bool>> predicate, string orderBy = "");
+
+        /// <summary>
+        /// Query Paging Data Based on Conditions
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="page index">current page index </param>
+        /// <param name="pageSize">distribution size </param>
+        /// <returns></returns>
+        IPagedList<T> FindPagedList(Expression<Func<T, bool>> predicate, string orderBy = "", int pageIndex = 1, int pageSize = 20);
 
         /// <summary>
         /// Query data according to conditions

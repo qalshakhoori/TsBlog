@@ -46,6 +46,19 @@ namespace TsBlog.Services
         }
 
         /// <summary>
+        /// Query Paging Data Based on Conditions
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="page index">current page index </param>
+        /// <param name="pageSize">distribution size </param>
+        /// <returns></returns>
+        public IPagedList<T> FindPagedList(Expression<Func<T, bool>> predicate, string orderBy = "", int pageIndex = 1, int pageSize = 20)
+        {
+            return _repository.FindPagedList(predicate, orderBy, pageIndex, pageSize);
+        }
+
+        /// <summary>
         /// Query data according to conditions
         /// </summary>
         /// <param name="predicate">conditional expression tree</param>
